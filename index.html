@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="Abhishek Yadav - CSE student, developer, and problem solver from Azamgarh, building web apps and turning ideas into reality." />
+    <title>Abhishek Yadav · Developer & Problem Solver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/jpeg" href="./images/logo.jpg" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Fixed Fullscreen Canvas for Scroll Sequence Animation -->
+    <div id="canvas-container" aria-hidden="true">
+      <canvas id="sequence-canvas"></canvas>
+    </div>
+
+    <!-- Cinematic Vignette & Ambient Depth Overlay -->
+    <div class="canvas-overlay" aria-hidden="true"></div>
+
+    <!-- Main Content Layer Placed On Top Of Canvas -->
+    <div id="content-wrapper">
+      <!-- Floating Navigation Bar -->
+      <header class="navbar-container">
+        <nav class="navbar" aria-label="Main Navigation">
+          <a href="#hero" class="brand-logo" aria-label="Abhishek Yadav Homepage">
+            <img src="./images/logo.jpg" alt="AB Logo" class="brand-logo-img" />
+            <span class="logo-name">Abhishek</span><span class="logo-dot">.dev</span>
+          </a>
+
+          <ul class="nav-links" id="nav-menu">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#journey" class="nav-link">Journey</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="#contact" class="btn-touch">
+              <span>Get in touch</span>
+              <span class="btn-circle-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </span>
+            </a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section hero-section">
+          <div class="hero-main-grid">
+            <!-- Left Header -->
+            <div class="hero-left">
+              <span class="hero-greeting">Hey, I'm</span>
+              <h1 class="hero-title">Abhishek<br />Yadav</h1>
+            </div>
+
+            <!-- Right Headline & Bio -->
+            <div class="hero-right">
+              <h2 class="hero-tagline">Better Code,<br />Bigger Dreams.</h2>
+              <p class="hero-bio">
+                CSE student, developer and problem solver , building web apps and turning ideas into reality.
+              </p>
+              <div class="hero-cta-group">
+                <a href="#projects" class="btn-primary">
+                  <span>View my projects</span>
+                  <span class="btn-icon-circle">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </span>
+                </a>
+                <button class="btn-secondary" id="resume-btn" type="button">
+                  <span>Download resume</span>
+                  <span class="btn-icon-subtle">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Bottom 4 Feature Cards -->
+          <div class="hero-features-grid">
+            <div class="feature-card">
+              <span class="feature-index">#01</span>
+              <h3 class="feature-title">Web Development</h3>
+              <p class="feature-desc">HTML, CSS, JS, EJS, Node.js, Express, MongoDB</p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-index">#02</span>
+              <h3 class="feature-title">C++ &amp; DSA</h3>
+              <p class="feature-desc">Problem solving on LeetCode</p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-index">#03</span>
+              <h3 class="feature-title">Automation</h3>
+              <p class="feature-desc">n8n, AI tools, workflows</p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-index">#04</span>
+              <h3 class="feature-title">Always Learning</h3>
+              <p class="feature-desc">New tech, open source, and projects</p>
+            </div>
+          </div>
+
+          <!-- Hero Tech Stack Marquee / Banner -->
+          <div class="tech-ticker-bar">
+            <div class="ticker-label">
+              <span class="ticker-pulse-dot"></span>
+              <span>Tech stack I use daily</span>
+            </div>
+            <div class="ticker-chips">
+              <div class="tech-chip">
+                <span class="tech-icon-dot tech-cpp"></span>
+                <span>C++</span>
+              </div>
+              <div class="tech-chip">
+                <span class="tech-icon-dot tech-js"></span>
+                <span>JavaScript</span>
+              </div>
+              <div class="tech-chip">
+                <span class="tech-icon-dot tech-node"></span>
+                <span>Node.js</span>
+              </div>
+              <div class="tech-chip">
+                <span class="tech-icon-dot tech-express"></span>
+                <span>Express</span>
+              </div>
+              <div class="tech-chip">
+                <span class="tech-icon-dot tech-mongo"></span>
+                <span>MongoDB</span>
+              </div>
+              <div class="tech-chip">
+                <span class="tech-icon-dot tech-n8n"></span>
+                <span>n8n</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section about-section">
+          <div class="section-header-split">
+            <div class="section-title-wrap">
+              <span class="section-eyebrow">About me</span>
+              <h2 class="section-title">Turning ideas into<br />real projects</h2>
+            </div>
+            <div class="about-lead-wrap">
+              <p class="about-lead">
+                I'm a second-year B.Tech CSE student at BIET Jhansi who loves building web applications and exploring AI tools.
+              </p>
+              <p class="about-sublead">
+                I enjoy solving problems, working on real-world projects and increasing my skills every day.
+              </p>
+              <a href="#contact" class="btn-accent-pill">
+                <span>More about me</span>
+                <span class="pill-arrow-icon">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bento Grid Cards -->
+          <div class="about-bento-grid">
+            <!-- Large Featured Card -->
+            <div class="bento-card bento-card-featured">
+              <div class="bento-card-header">
+                <span class="bento-icon-badge">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </span>
+                <span class="bento-tag">Currently</span>
+              </div>
+              <div class="bento-hero-text">
+                <h3>2nd year<br />B.Tech CSE</h3>
+              </div>
+              <div class="bento-card-decor" aria-hidden="true"></div>
+            </div>
+
+            <!-- College Card -->
+            <div class="bento-card bento-card-glass">
+              <div class="bento-card-header">
+                <span class="bento-icon-badge">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </span>
+                <span class="bento-tag">College</span>
+              </div>
+              <div class="bento-content">
+                <h4>BIET Jhansi</h4>
+                <p class="bento-subtext">Bundelkhand Institute of Engineering &amp; Technology</p>
+              </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="bento-card bento-card-glass">
+              <div class="bento-card-header">
+                <span class="bento-icon-badge">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
+                <span class="bento-tag">Based in</span>
+              </div>
+              <div class="bento-content">
+                <h4>Azamgarh,<br />Uttar Pradesh</h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Info Details Strip -->
+          <div class="about-meta-strip">
+            <div class="meta-item">
+              <span class="meta-label">Name</span>
+              <span class="meta-value">Abhishek Yadav</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Age</span>
+              <span class="meta-value">20</span>
+            </div>
+            <div class="meta-item meta-item-wide">
+              <span class="meta-label">Branch</span>
+              <span class="meta-value">Computer Science &amp; Engineering</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="section projects-section">
+          <div class="section-header-block">
+            <span class="section-eyebrow">My work</span>
+            <div class="section-heading-with-sub">
+              <h2 class="section-title">Featured projects</h2>
+              <p class="section-desc">
+                A collection of projects I've built to learn, improve and solve real problems.
+              </p>
+            </div>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: NESTLY -->
+            <article class="project-card">
+              <div class="project-thumbnail-wrapper">
+                <div class="project-browser-frame">
+                  <div class="mockup-header">
+                    <span class="mock-dot red"></span>
+                    <span class="mock-dot yellow"></span>
+                    <span class="mock-dot green"></span>
+                    <span class="mock-url">nestly-vfoh.onrender.com</span>
+                  </div>
+                  <div class="project-img-container">
+                    <img src="./images/project-nestly.png" alt="NESTLY Platform Preview" class="project-img" loading="lazy" />
+                    <div class="project-img-overlay"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3 class="project-title">NESTLY</h3>
+                <p class="project-summary">Local &amp; stay listing platform</p>
+                <div class="project-tags">
+                  <span class="tag">EJS</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">MongoDB</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Amazon Clone -->
+            <article class="project-card">
+              <div class="project-thumbnail-wrapper">
+                <div class="project-browser-frame">
+                  <div class="mockup-header">
+                    <span class="mock-dot red"></span>
+                    <span class="mock-dot yellow"></span>
+                    <span class="mock-dot green"></span>
+                    <span class="mock-url">amazon-clone.dev</span>
+                  </div>
+                  <div class="project-img-container">
+                    <img src="./images/project-amazon.png" alt="Amazon Clone Preview" class="project-img" loading="lazy" />
+                    <div class="project-img-overlay"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3 class="project-title">Amazon Clone</h3>
+                <p class="project-summary">E-commerce UI clone</p>
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: Todo List -->
+            <article class="project-card">
+              <div class="project-thumbnail-wrapper">
+                <div class="project-browser-frame">
+                  <div class="mockup-header">
+                    <span class="mock-dot red"></span>
+                    <span class="mock-dot yellow"></span>
+                    <span class="mock-dot green"></span>
+                    <span class="mock-url">todoflow.app</span>
+                  </div>
+                  <div class="project-img-container">
+                    <img src="./images/project-todo.png" alt="ToDo Flow Application Preview" class="project-img" loading="lazy" />
+                    <div class="project-img-overlay"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3 class="project-title">ToDo Flow</h3>
+                <p class="project-summary">Productivity &amp; daily task manager</p>
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4: Rock-Paper-Scissors -->
+            <article class="project-card">
+              <div class="project-thumbnail-wrapper">
+                <div class="project-browser-frame">
+                  <div class="mockup-header">
+                    <span class="mock-dot red"></span>
+                    <span class="mock-dot yellow"></span>
+                    <span class="mock-dot green"></span>
+                    <span class="mock-url">rock-paper-scissors.play</span>
+                  </div>
+                  <div class="project-img-container">
+                    <img src="./images/project-game.png" alt="Rock-Paper-Scissors Game Preview" class="project-img center-img" loading="lazy" />
+                    <div class="project-img-overlay"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3 class="project-title">Rock-Paper-Scissors</h3>
+                <p class="project-summary">Neon interactive game with score tracker</p>
+                <div class="project-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Tech Stack: Skills & Technologies Section -->
+        <section id="skills" class="section skills-section">
+          <div class="section-header-block">
+            <span class="section-eyebrow">Tech stack</span>
+            <h2 class="section-title">Skills &amp; technologies</h2>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Category 1: Languages -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <h3 class="category-title">Languages</h3>
+                <span class="category-count">4</span>
+              </div>
+              <div class="category-items-grid">
+                <div class="skill-item">
+                  <span class="skill-badge badge-cpp">C++</span>
+                  <span class="skill-name">C++</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-js">JS</span>
+                  <span class="skill-name">Javascript</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-html">H5</span>
+                  <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-css">CSS</span>
+                  <span class="skill-name">CSS3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2: Backend & Data -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <h3 class="category-title">Backend &amp; data</h3>
+                <span class="category-count">4</span>
+              </div>
+              <div class="category-items-grid">
+                <div class="skill-item">
+                  <span class="skill-badge badge-node">Node</span>
+                  <span class="skill-name">Node.js</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-express">Ex</span>
+                  <span class="skill-name">Express</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-mongo">MDB</span>
+                  <span class="skill-name">MongoDB</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-ejs">EJS</span>
+                  <span class="skill-name">EJS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 3: Tools & UI -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <h3 class="category-title">Tools &amp; UI</h3>
+                <span class="category-count">4</span>
+              </div>
+              <div class="category-items-grid">
+                <div class="skill-item">
+                  <span class="skill-badge badge-bootstrap">BS</span>
+                  <span class="skill-name">Bootstrap</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-git">Git</span>
+                  <span class="skill-name">Git &amp; GitHub</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-vscode">VS</span>
+                  <span class="skill-name">VS Code</span>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-badge badge-n8n">n8n</span>
+                  <span class="skill-name">n8n</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Journey / Education & Experience Section -->
+        <section id="journey" class="section journey-section">
+          <div class="journey-layout-grid">
+            <div class="journey-header-col">
+              <span class="section-eyebrow">Journey</span>
+              <h2 class="section-title">Education &amp;<br />experience</h2>
+            </div>
+
+            <div class="timeline-container">
+              <div class="timeline-line"></div>
+
+              <!-- Step 1: PRESENT -->
+              <div class="timeline-item">
+                <div class="timeline-dot-wrapper">
+                  <span class="timeline-dot active"></span>
+                </div>
+                <div class="timeline-card">
+                  <span class="timeline-badge">PRESENT</span>
+                  <h3 class="timeline-role">B.Tech CSE</h3>
+                  <p class="timeline-institution">BIET Jhansi</p>
+                </div>
+              </div>
+
+              <!-- Step 2: 2023 - 2024 -->
+              <div class="timeline-item">
+                <div class="timeline-dot-wrapper">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-card">
+                  <span class="timeline-date">2023 - 2024</span>
+                  <h3 class="timeline-role">Higher Secondary (12th)</h3>
+                  <p class="timeline-institution">UP Board</p>
+                </div>
+              </div>
+
+              <!-- Step 3: 2021 - 2022 -->
+              <div class="timeline-item">
+                <div class="timeline-dot-wrapper">
+                  <span class="timeline-dot"></span>
+                </div>
+                <div class="timeline-card">
+                  <span class="timeline-date">2021 - 2022</span>
+                  <h3 class="timeline-role">High School (10th)</h3>
+                  <p class="timeline-institution">UP Board</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Call to Action Banner Section -->
+        <section id="contact" class="section cta-section">
+          <div class="cta-banner-card">
+            <div class="cta-left">
+              <h2 class="cta-title">Let's build<br />something<br />meaningful together</h2>
+              <p class="cta-subtitle">
+                Have a project in mind, a collaboration opportunity, or just want to say hi? Feel free to reach out.
+              </p>
+              <a href="mailto:abhishek.yadav0727@gmail.com" class="btn-cta-contact">
+                <span>Contact me</span>
+                <span class="btn-cta-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <div class="cta-right">
+              <div class="contact-block">
+                <span class="contact-label">Email</span>
+                <a href="mailto:abhishek.yadav0727@gmail.com" class="contact-link">abhishek.yadav0727@gmail.com</a>
+              </div>
+
+              <div class="contact-block">
+                <span class="contact-label">Location</span>
+                <span class="contact-text">Azamgarh, Uttar Pradesh</span>
+              </div>
+
+              <div class="contact-block">
+                <span class="contact-label">Find me on</span>
+                <div class="social-links-row">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-tag">GitHub</a>
+                  <span class="social-sep">•</span>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-tag">LinkedIn</a>
+                  <span class="social-sep">•</span>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-tag">Instagram</a>
+                  <span class="social-sep">•</span>
+                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-tag">YouTube</a>
+                  <span class="social-sep">•</span>
+                  <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-tag">X</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-brand">
+            <img src="./images/logo.jpg" alt="AB Logo" class="footer-logo-img" />
+            <div class="footer-brand-text">
+              <span class="footer-name">Abhishek Yadav</span>
+              <span class="footer-tagline">· Build | Learn | Grow</span>
+            </div>
+          </div>
+          <div class="footer-copy">
+            &copy; 2024 Abhishek Yadav. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Resume Download Modal -->
+    <div id="resume-modal" class="modal-backdrop" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Abhishek Yadav - Resume</h3>
+          <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="resume-preview-sheet">
+            <div class="resume-sheet-header">
+              <h4>Abhishek Yadav</h4>
+              <p>B.Tech CSE Student · BIET Jhansi</p>
+              <span class="resume-contact-inline">abhishek.yadav0727@gmail.com · Azamgarh, UP</span>
+            </div>
+            <div class="resume-sheet-section">
+              <h5>Skills Summary</h5>
+              <p>C++, JavaScript, Node.js, Express, MongoDB, EJS, HTML5, CSS3, Git, n8n</p>
+            </div>
+            <div class="resume-sheet-section">
+              <h5>Education</h5>
+              <p><strong>B.Tech in Computer Science &amp; Engineering</strong>, BIET Jhansi (2023 - 2027)</p>
+              <p><strong>Intermediate (12th)</strong>, UP Board (2023 - 2024)</p>
+            </div>
+            <div class="resume-sheet-section">
+              <h5>Featured Projects</h5>
+              <p><strong>NESTLY:</strong> Local &amp; stay listing platform with Express &amp; MongoDB</p>
+              <p><strong>Amazon Clone:</strong> Responsive E-commerce UI clone</p>
+              <p><strong>ToDo Flow:</strong> Productivity &amp; daily task manager</p>
+              <p><strong>Rock-Paper-Scissors:</strong> Interactive neon game with score tracker</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="mailto:abhishek.yadav0727@gmail.com?subject=Resume%20Inquiry%20-%20Abhishek%20Yadav" class="btn-primary">
+            <span>Request Full PDF</span>
+          </a>
+          <button class="btn-secondary" id="modal-dismiss-btn" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./lenis.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
